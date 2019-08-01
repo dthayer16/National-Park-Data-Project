@@ -1,0 +1,7 @@
+.nav-dropdown {    
+    position: relative;
+}
+#navbarSupportedContent {
+    position: absolute;
+    right: 0;
+}
