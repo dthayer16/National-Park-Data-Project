@@ -1,13 +1,7 @@
 console.log("linked");
 
-$(document).ready(function () {
-    console.log("doc rdy");
-
-
-
-    // if (response.data[index].latlong) {
-    //     weatherAPI();
-    // }
+$(document).ready(function() {
+console.log("doc rdy");
 
     function weatherAPI() {
 
@@ -19,7 +13,6 @@ $(document).ready(function () {
         let lon = newArray[1].split(":").pop();
         console.log(lon);
 
-        // API call variables
         var APIKEY = "25e2544ac37c66d4859201da9936ccae";
         var queryURL = "https://api.openweathermap.org/data/2.5/weather?lon=" + lon + "&lat=" + lat + "&APPID=" + APIKEY;
 
@@ -31,53 +24,54 @@ $(document).ready(function () {
 
             // converting kelvin to fahrenheit
             var temp = Math.floor((response.main.temp - 273.15) * 9 / 5 + 32);
-            console.log();
 
-            // response values and variables for image src=
             var condition = response.weather[0].main.toLowerCase();
 
+            // forecast images assigned to variables
             var sunnyIcon = "./assets/images/sunn2.png";
             var rainyIcon = "./assets/images/rainy.png";
             var cloudyIcon = "./assets/images/cloudy1.png";
-            var mistyIcon = "./assets/images/sunn2.png";
+           
 
-
+            // dynamic div to display 3 things
             var weatherDIV = $("<div>");
+            weatherDIV.addClass("weather-info-container");
+
             weatherDIV.append(
+                $("<img>").addClass("forecast-icon").attr("src", sunnyIcon),
+                $("<h3>").text(temp + "˚ F"),
+                $("<h3>").text(condition));
 
-                // add class to dynamic image
-                $("<img>").addClass("weather-icon").attr("src", sunnyIcon),
-                $("<h3>").text(temp + " ˚F"),
-                $("<h3>").text(condition))
-            $(".container").append(weatherDIV);
+                $(".weather").append(weatherDIV);
+                
+                switch (condition) {
+                    case "rain":
+                    case "raining":
+                    case "storm":
+                    case "storms":
+                    case "mist":
+                    case "misty":
+                    $(".forecast-icon").attr("src", rainyIcon);
+                    // might add a jquery css modifier to adjust text color of condition. rainy = blue,  clouds = grey etc.
+                    break;
+                    case "sunny":
+                    case "sun":
+                    case "sunshine":
+                    $("forecast-icon").attr("src", sunnyIcon);
+                    break;
+                    case "clouds":
+                    case "cloudy":
+                    case "partly cloudy":
+                    $(".forecast-icon").attr("src", cloudyIcon);
+                    break;
+                    
+            };
+        });
+    };
 
-            switch (condition) {
-                case "mist":
-                case "misty":
-                    $(".weather-icon").attr("src", mistyIcon);
-                    break;
-                case "sunny":
-                case "sun":
-                case "sunshine":
-                    $(".weather-icon").attr("src", sunnyIcon);
-                    break;
-                case "clouds":
-                    $(".weather-icon").attr("src", cloudyIcon);
-                    break;
-                case "thunderstorm":
-                case "rain":
-                case "raining":
-
-                case "storm":
-                    $(".weather-icon").attr("src", rainyIcon);
-                    break;
-            }
-
-        })
-    }
-    $(".call").on("click", function () {
+    $(".test-button").on("click",function() {
         console.log("button clicked");
         weatherAPI();
-    })
+    });
 
 })
