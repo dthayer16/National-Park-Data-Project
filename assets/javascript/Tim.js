@@ -53,6 +53,7 @@ var states = [
 
 var index = 0;
 
+
 states.forEach(function (state) {
     var newStateButton = $("<button>");
 
@@ -66,6 +67,7 @@ states.forEach(function (state) {
 states.forEach(function (state) {
     var stateOption = $("<option>");
 
+    stateOption.addClass("dropdown-item");
     stateOption.attr("value", state.abbr);
     stateOption.text(state.name);
     index++;

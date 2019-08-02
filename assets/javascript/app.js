@@ -121,13 +121,13 @@ $(".dropdown-item").click(function () {
             $park.append($collapse);
 
             $("#park-results").append($park)
-            if(latLong){
+            if (latLong) {
                 weatherAPI({
                     id: park.id,
                     lat: latLong.split(", ")[0].split(":").pop(),
                     long: latLong.split(", ")[1].split(":").pop(),
                 });
-            }else {
+            } else {
                 $cardBody.append("No weather data available");
             }
         });
@@ -135,13 +135,6 @@ $(".dropdown-item").click(function () {
 });
 
 function weatherAPI(params) {
-
-    // translating parksAPI data string
-    // let string = latLong;
-    // let newArray = string.split(", ");
-    // let lat = newArray[0].split(":").pop();
-    // let lon = newArray[1].split(":").pop();
-
     var APIKEY = "25e2544ac37c66d4859201da9936ccae";
     var queryURL = "https://api.openweathermap.org/data/2.5/weather?lon=" + params.long + "&lat=" + params.lat + "&APPID=" + APIKEY;
 
