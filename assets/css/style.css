@@ -7,7 +7,22 @@
     right: 0;
 }
 
-body {
+.navbar-background {
+    background-color: #228B22;
+}
+
+#navbar-leftTitle {
+    color: yellow;
+    font-family: 'Crimson Pro', "Times New Roman", serif;
+    font-size: 30px;
+}
+
+.dropdown-item:hover {
+    background-color: #228B22;
+    color: yellow;
+}
+
+#homepage-body {
     background-image: url("https://751601.smushcdn.com/1359779/wp-content/uploads/2018/06/Nevada-Falls_Wanderlove_web.jpg?lossy=0&strip=1&webp=1");
     background-repeat: no-repeat;
     background-size: 100vw 100vh;
@@ -65,9 +80,13 @@ body {
         margin-left: 5px;
     }
 
-    body {
+    #homepage-body {
         background-image: url("https://img.purch.com/w/660/aHR0cDovL3d3dy5saXZlc2NpZW5jZS5jb20vaW1hZ2VzL2kvMDAwLzA1My8yODIvb3JpZ2luYWwvd2F0ZXJmYWxscy0yLXVwcGVyeW9zZW1pdGVmYWxsLmpwZw==");
         background-repeat: no-repeat;
         background-size: 100vw 100vh;
+    }
+    
+    #navbar-leftTitle {
+        font-size: 20px;
     }
 }
