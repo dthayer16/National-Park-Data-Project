@@ -129,8 +129,8 @@ function nationalParkData(state) {
             $collapse.attr("id", "park-data-" + i);
             let $cardBody = $("<div>").addClass("card-body");
             $cardBody.append($("<p>").text(description));
-            $cardBody.append($("<button class='btn btn-primary mr-2'>").text("Official Site").attr("href", url));
-            $cardBody.append($("<button class='btn btn-primary'>").text("Directions").attr("href", directionsUrl));
+            $cardBody.append($("<a class='btn btn-primary mr-2'>").text("Official Site").attr("href", url).attr("target", "_blank"));
+            $cardBody.append($("<a class='btn btn-primary'>").text("Directions").attr("href", directionsUrl).attr("target", "_blank"));
             $collapse.append($cardBody);
 
             $park.append($collapse);
