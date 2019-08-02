@@ -1,12 +1,3 @@
-.nav-dropdown {    
-    position: relative;
-}
-
-#navbarSupportedContent {
-    position: absolute;
-    right: 0;
-}
-
 .navbar-background {
     background-color: #228B22;
 }
