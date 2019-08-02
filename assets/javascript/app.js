@@ -77,10 +77,25 @@ states.forEach(function (state) {
     $("#find-state-parks").append(stateOption);
 });
 
-$(".dropdown-item").click(function () {
-    $("#park-results").empty();
+function newDoc(state) {
+    window.location.assign("results.html?state=" + state);
+};
 
-    var state = $(this).val().trim().toUpperCase();
+
+$("#submit-button-style").on("click", function (e) {
+    e.preventDefault();
+    newDoc($("#find-state-parks").val());
+});
+
+var urlParams = new URLSearchParams(window.location.search);
+
+if (urlParams.has("state")) {
+    const state = urlParams.get("state");
+    nationalParkData(state);
+}
+
+function nationalParkData(state) {
+
     var queryURL = "https://developer.nps.gov/api/v1/parks?stateCode=" + state + "&api_key=hkWGAafDSgmMNLcuSVwIUYko1ZyldLktuQdSpR1n";
 
     $.ajax({
@@ -88,7 +103,7 @@ $(".dropdown-item").click(function () {
         method: "GET"
     }).then(function (response) {
         const parks = response.data;
-        console.log(parks);
+
         parks.forEach(function (park, i) {
             let $park = $("<div>")
                 .addClass("card park-card")
@@ -132,9 +147,24 @@ $(".dropdown-item").click(function () {
             }
         });
     });
+};
+
+$(".dropdown-item").click(function () {
+    $("#park-results").empty();
+
+    var state = $(this).val().trim().toUpperCase();
+
+    nationalParkData(state);
 });
 
 function weatherAPI(params) {
+
+    // translating parksAPI data string
+    // let string = latLong;
+    // let newArray = string.split(", ");
+    // let lat = newArray[0].split(":").pop();
+    // let lon = newArray[1].split(":").pop();  
+
     var APIKEY = "25e2544ac37c66d4859201da9936ccae";
     var queryURL = "https://api.openweathermap.org/data/2.5/weather?lon=" + params.long + "&lat=" + params.lat + "&APPID=" + APIKEY;
 
