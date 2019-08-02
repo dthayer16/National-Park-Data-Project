@@ -7,24 +7,36 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Pro&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Document</title>
 </head>
 
 <body>
 
-    <form>
-        <div class="form-row align-items-center">
-            <div class="col-auto my-1">
-                <select class="custom-select mr-sm-2" id="find-state-parks">
-                    <option selected>None Selected</option>
-                </select>
-            </div>
-            <div class="col-auto my-1">
-                <button type="submit" class="btn btn-primary">Submit</button>
+    <div class="container">
+        <div class="row title-row">
+            <div class="col rounded-pill" id="mainPage-title">
+                National Parks Data
             </div>
         </div>
-    </form>
+        <div class="row">
+            <div class="col">
+                <form>
+                    <div class="form-row align-items-center" id="home-selectAndSubmit">
+                        <div class="col-auto my-1" id="statePark-dropdown-home">
+                            <select class="custom-select mr-sm-2" id="find-state-parks">
+                                <option selected>Select State</option>
+                            </select>
+                        </div>
+                        <div class="col-auto my-1">
+                            <button type="submit" class="btn btn-primary" id="submit-button-style">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
