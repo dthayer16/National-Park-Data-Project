@@ -118,19 +118,19 @@ function nationalParkData(state) {
 
             let $cardHeader = $("<div>").addClass("card-header");
             $cardHeader.append($("<button>")
-                .addClass("btn btn-link ")
+                .addClass("btn")
                 .text(parkName)
                 .attr("data-toggle", "collapse")
                 .attr("data-target", "#park-data-" + i)
             );
             $park.append($cardHeader);
 
-            let $collapse = $("<div>").addClass("collapse");
+            let $collapse = $("<div>").addClass("collapse mb-4");
             $collapse.attr("id", "park-data-" + i);
-            let $cardBody = $("<div>").addClass("card-body");
+            let $cardBody = $("<div>").addClass("card-body align-middle text-center");
             $cardBody.append($("<p>").text(description));
-            $cardBody.append($("<a class='btn btn-primary mr-2'>").text("Official Site").attr("href", url).attr("target", "_blank"));
-            $cardBody.append($("<a class='btn btn-primary'>").text("Directions").attr("href", directionsUrl).attr("target", "_blank"));
+            $cardBody.append($("<a class='btn btn-primary mr-2 mb-2'>").text("Official Site").attr("href", url).attr("target", "_blank"));
+            $cardBody.append($("<a class='btn btn-primary mb-2'>").text("Directions").attr("href", directionsUrl).attr("target", "_blank"));
             $collapse.append($cardBody);
 
             $park.append($collapse);
@@ -143,7 +143,7 @@ function nationalParkData(state) {
                     long: latLong.split(", ")[1].split(":").pop(),
                 });
             } else {
-                $cardBody.append("No weather data available");
+                $cardBody.append("<p>No weather data available</p>");
             }
         });
     });
