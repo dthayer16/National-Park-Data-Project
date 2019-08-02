@@ -159,12 +159,6 @@ $(".dropdown-item").click(function () {
 
 function weatherAPI(params) {
 
-    // translating parksAPI data string
-    // let string = latLong;
-    // let newArray = string.split(", ");
-    // let lat = newArray[0].split(":").pop();
-    // let lon = newArray[1].split(":").pop();  
-
     var APIKEY = "25e2544ac37c66d4859201da9936ccae";
     var queryURL = "https://api.openweathermap.org/data/2.5/weather?lon=" + params.long + "&lat=" + params.lat + "&APPID=" + APIKEY;
 
@@ -173,18 +167,19 @@ function weatherAPI(params) {
         method: "GET"
     }).then(function (response) {
 
-        // converting kelvin to fahrenheit
+    
         var temp = Math.floor((response.main.temp - 273.15) * 9 / 5 + 32);
 
         var condition = response.weather[0].main.toLowerCase();
 
-        // forecast images assigned to variables
         var sunnyIcon = "./assets/images/sunn2.png";
         var rainyIcon = "./assets/images/rainy.png";
         var cloudyIcon = "./assets/images/cloudy1.png";
+        var hazeIcon = "./assets/images/Haze.png";
+        var snowIcon = "./assets/images/Snow.ico";
+        var stormIcon = "./assets/images/Storm.png";
 
 
-        // dynamic div to display 3 things
         var weatherDIV = $("<div>");
         weatherDIV.addClass("weather-info-container");
 
@@ -196,25 +191,33 @@ function weatherAPI(params) {
         $("#" + params.id).find(".card-body").append(weatherDIV);
 
         switch (condition) {
-            case "rain":
-            case "raining":
+            case "snow":
+                $("#" + params.id).find(".forecast-icon").attr("src", snowIcon);
+            break;
             case "storm":
             case "storms":
+            case "thunderstorm":
+                $("#" + params.id).find(".forecast-icon").attr("src", stormIcon);
+            break;
+            case "rain":
+            case "raining":
             case "mist":
             case "misty":
                 $("#" + params.id).find(".forecast-icon").attr("src", rainyIcon);
-                // might add a jquery css modifier to adjust text color of condition. rainy = blue,  clouds = grey etc.
-                break;
+            break;
             case "sunny":
             case "sun":
             case "sunshine":
                 $("#" + params.id).find(".forecast-icon").attr("src", sunnyIcon);
-                break;
+            break;
             case "clouds":
             case "cloudy":
             case "partly cloudy":
                 $("#" + params.id).find(".forecast-icon").attr("src", cloudyIcon);
-                break;
+            break;
+            case "haze":
+                $("#" + params.id).find(".forecast-icon").attr("src", hazeIcon);
+            break;
 
         };
     });
