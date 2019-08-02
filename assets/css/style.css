@@ -58,8 +58,33 @@
     margin-left: 10px;
 }
 
+.weather-info-container {
+    text-align: center;
+    position:relative;
+    margin:auto;
+    height:80px;
+    width:175px;
+    border-radius: 10px;
+    border: 1px solid yellow;
+    background-color: #228B22;
+    color: yellow;
+    font-size: 25px;
+    font-family:Cursive;
+}
+
+.weather-info-container h3 {
+    position:relative;
+}
+
+.forecast-icon {
+    position:relative;
+    height:75px;
+    width:75px;
+    float:left;
+}
+
 @media only screen and (max-width: 400px) {
-    #mainPage-title{
+    #mainPage-title {
         margin: 55% 5% 30px 5%;
         padding: 20px;
         font-size: 35px;
