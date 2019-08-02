@@ -1,7 +1,92 @@
 .nav-dropdown {    
     position: relative;
 }
+
 #navbarSupportedContent {
     position: absolute;
     right: 0;
+}
+
+.navbar-background {
+    background-color: #228B22;
+}
+
+#navbar-leftTitle {
+    color: yellow;
+    font-family: 'Crimson Pro', "Times New Roman", serif;
+    font-size: 30px;
+}
+
+.dropdown-item:hover {
+    background-color: #228B22;
+    color: yellow;
+}
+
+#homepage-body {
+    background-image: url("https://751601.smushcdn.com/1359779/wp-content/uploads/2018/06/Nevada-Falls_Wanderlove_web.jpg?lossy=0&strip=1&webp=1");
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+}
+
+#mainPage-title {
+    background-color: #228B22;
+    color: yellow;
+    margin: 15% 15% 30px 15%;
+    padding: 40px;
+    text-align: center;
+    font-family: 'Crimson Pro', "Times New Roman", serif;
+    font-size: 70px;
+    font-weight: bold;
+}
+
+#home-selectAndSubmit {
+    margin-left: 21%;
+}
+
+#statePark-dropdown-home {
+    width: 400px;
+}
+
+#submit-button-style {
+    width: 200px;
+    background-color: #228B22;
+    color: yellow;
+    border-color: #228B22;
+    font-family: 'Crimson Pro', "Times New Roman", serif;
+    font-size: 20px;
+    padding: 3px;
+    margin-left: 10px;
+}
+
+@media only screen and (max-width: 400px) {
+    #mainPage-title{
+        margin: 55% 5% 30px 5%;
+        padding: 20px;
+        font-size: 35px;
+    }
+
+    #home-selectAndSubmit {
+        margin-left: 0;
+    }
+    
+    #statePark-dropdown-home {
+        width: 225px;
+    }
+    
+    #submit-button-style {
+        width: 110px;
+        font-size: 20px;
+        padding: 4px;
+        margin-left: 5px;
+    }
+
+    #homepage-body {
+        background-image: url("https://img.purch.com/w/660/aHR0cDovL3d3dy5saXZlc2NpZW5jZS5jb20vaW1hZ2VzL2kvMDAwLzA1My8yODIvb3JpZ2luYWwvd2F0ZXJmYWxscy0yLXVwcGVyeW9zZW1pdGVmYWxsLmpwZw==");
+        background-repeat: no-repeat;
+        background-size: 100vw 100vh;
+    }
+    
+    #navbar-leftTitle {
+        font-size: 20px;
+    }
 }
