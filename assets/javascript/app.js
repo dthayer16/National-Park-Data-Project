@@ -103,6 +103,8 @@ function nationalParkData(state) {
         method: "GET"
     }).then(function (response) {
         const parks = response.data;
+        
+        $("#navbar-leftTitle").text("National Park Data: " + state);
 
         parks.forEach(function (park, i) {
             let $park = $("<div>")

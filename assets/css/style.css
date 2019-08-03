@@ -17,6 +17,7 @@
     background-image: url("https://751601.smushcdn.com/1359779/wp-content/uploads/2018/06/Nevada-Falls_Wanderlove_web.jpg?lossy=0&strip=1&webp=1");
     background-repeat: no-repeat;
     background-size: 100vw 100vh;
+    background-attachment: fixed;
 }
 
 .logo-image {
