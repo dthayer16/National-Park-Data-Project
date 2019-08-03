@@ -19,6 +19,12 @@
     background-size: 100vw 100vh;
 }
 
+.logo-image {
+height:100%;
+width: 130px;
+margin-right:15px;
+
+}
 #mainPage-title {
     background-color: #228B22;
     color: yellow;
@@ -48,7 +54,51 @@
     padding: 3px;
     margin-left: 10px;
 }
+#park-results {
+    position:relative;
+    margin: auto auto;
+    align-content: center;
+    
+}
 
+.card {
+    margin:auto;
+    top:10px;
+}
+.card-header {
+    font-size: 24px;
+    background-color:rgba(254,252,234);
+}
+.card-header-image {
+    height:35px;
+    width:35px;
+    margin-right:10px;
+}
+.card-title {
+    font-size:26px;
+    color: black;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.card-title:hover {
+    font-size: 32px;
+    font-weight:bold;
+
+}
+.card-header:hover {
+    background-color:rgb(228, 182, 64);
+    font-size:25px;
+    font-weight: bold;
+
+}
+.card-body {
+    font-size: 18px;
+    border:3px solid #228B22;
+    background: -moz-linear-gradient(top, rgba(254,252,234,1) 76%, rgba(241,218,54,1)95%);
+    background: -webkit-linear-gradient(top, rgba(254,252,234,1) 76%,rgba(241,218,54,1)); 
+    background: linear-gradient(to bottom, rgba(254,252,234,1) 76%,rgba(241,218,54,1));
+    font-size:18px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
 .weather-info-container {
     text-align: center;
     position:relative;
@@ -59,8 +109,9 @@
     border: 1px solid yellow;
     background-color: #228B22;
     color: yellow;
-    font-size: 22px;
+    font-size: 20px;
     font-family:Cursive;
+    margin-top:4px;
 }
 
 .weather-info-container h3 {

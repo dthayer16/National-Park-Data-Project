@@ -117,8 +117,10 @@ function nationalParkData(state) {
 
 
             let $cardHeader = $("<div>").addClass("card-header");
-            $cardHeader.append($("<button>")
-                .addClass("btn")
+            $cardHeader.append(
+                $("<img>").addClass("card-header-image").attr("src","./assets/images/arrow.png"),
+                $("<button>")
+                .addClass("btn card-title")
                 .text(parkName)
                 .attr("data-toggle", "collapse")
                 .attr("data-target", "#park-data-" + i)
