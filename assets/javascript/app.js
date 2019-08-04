@@ -103,7 +103,7 @@ function nationalParkData(state) {
         method: "GET"
     }).then(function (response) {
         const parks = response.data;
-        
+
         $("#navbar-leftTitle").text("National Park Data: " + state);
 
         parks.forEach(function (park, i) {
@@ -120,19 +120,19 @@ function nationalParkData(state) {
 
             let $cardHeader = $("<div>").addClass("card-header");
             $cardHeader.append(
-                $("<img>").addClass("card-header-image").attr("src","./assets/images/arrow.png"),
+                $("<img>").addClass("card-header-image").attr("src", "./assets/images/arrow.png"),
                 $("<button>")
-                .addClass("btn card-title")
-                .text(parkName)
-                .attr("data-toggle", "collapse")
-                .attr("data-target", "#park-data-" + i)
+                    .addClass("btn card-title")
+                    .text(parkName)
+                    .attr("data-toggle", "collapse")
+                    .attr("data-target", "#park-data-" + i)
             );
             $park.append($cardHeader);
 
             let $collapse = $("<div>").addClass("collapse mb-4");
             $collapse.attr("id", "park-data-" + i);
             let $cardBody = $("<div>").addClass("card-body align-middle text-center");
-            $cardBody.append($("<p>").text(description));
+            $cardBody.append($("<p>").text(description).addClass("lead text-left"));
             $cardBody.append($("<a class='btn btn-primary mr-2 mb-2'>").text("Official Site").attr("href", url).attr("target", "_blank"));
             $cardBody.append($("<a class='btn btn-primary mb-2'>").text("Directions").attr("href", directionsUrl).attr("target", "_blank"));
             $collapse.append($cardBody);
@@ -171,7 +171,7 @@ function weatherAPI(params) {
         method: "GET"
     }).then(function (response) {
 
-    
+
         var temp = Math.floor((response.main.temp - 273.15) * 9 / 5 + 32);
 
         var condition = response.weather[0].main.toLowerCase();
@@ -197,31 +197,31 @@ function weatherAPI(params) {
         switch (condition) {
             case "snow":
                 $("#" + params.id).find(".forecast-icon").attr("src", snowIcon);
-            break;
+                break;
             case "storm":
             case "storms":
             case "thunderstorm":
                 $("#" + params.id).find(".forecast-icon").attr("src", stormIcon);
-            break;
+                break;
             case "rain":
             case "raining":
             case "mist":
             case "misty":
                 $("#" + params.id).find(".forecast-icon").attr("src", rainyIcon);
-            break;
+                break;
             case "sunny":
             case "sun":
             case "sunshine":
                 $("#" + params.id).find(".forecast-icon").attr("src", sunnyIcon);
-            break;
+                break;
             case "clouds":
             case "cloudy":
             case "partly cloudy":
                 $("#" + params.id).find(".forecast-icon").attr("src", cloudyIcon);
-            break;
+                break;
             case "haze":
                 $("#" + params.id).find(".forecast-icon").attr("src", hazeIcon);
-            break;
+                break;
 
         };
     });
